@@ -1,0 +1,1204 @@
+{
+	"info": {
+		"_postman_id": "dfe22671-1230-47c4-94c5-bddaed572a69",
+		"name": "/api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27663436"
+	},
+	"item": [
+		{
+			"name": "/api/auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contraseña\":\"123\",\r\n    \"email\":\"juano_ortega@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cedula\":\"2\",\r\n    \"contraseña\":\"123\",\r\n    \"nombre\":\"Juan 2\",\r\n    \"email\":\"juano_ortega@hotmail.com\",\r\n    \"isCuentaActiva\": true,\r\n    \"telefono\":\"3136142910\",\r\n    \"direccion\":\"Calle 6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/crear_usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"crear_usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar producto por codigo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/obtener_producto/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"obtener_producto",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recuperar contraseña",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/recuperar_contraseña/juano_ortega@hotmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"recuperar_contraseña",
+								"juano_ortega@hotmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cedula\":\"1004870909\",\r\n    \"contraseña\":\"123\",\r\n    \"nombre\":\"Juan David Ortega Casas\",\r\n    \"email\":\"juano_ortega@hotmail.com\",\r\n    \"isCuentaActiva\": true,\r\n    \"telefono\":\"3136142910\",\r\n    \"direccion\":\"Calle 6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/obtener_productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"obtener_productos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/carritos",
+			"item": [
+				{
+					"name": "Agregar producto a carrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1NjEzMywiZXhwIjoxNjg1MjU3OTMzfQ.5yIuLkpxUsprtOr_bdRCHp1XgRXew0TiEjbtpXFuZpw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuarioCedulaCarrito\":\"2\",\r\n    \"productoCodigo\":4,\r\n    \"unidades\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carritos/agregar_producto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carritos",
+								"agregar_producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar producto a carrito Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1NjEzMywiZXhwIjoxNjg1MjU3OTMzfQ.5yIuLkpxUsprtOr_bdRCHp1XgRXew0TiEjbtpXFuZpw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuarioCedulaCarrito\":\"2\",\r\n    \"productoCodigo\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carritos/eliminar_producto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carritos",
+								"eliminar_producto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/moderadores",
+			"item": [
+				{
+					"name": "Crear moderador",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJNT0RFUkFET1IiXSwic3ViIjoieGJiYmVyejJAZ21haWwuY29tIiwiaWF0IjoxNjg1MjU1NzEyLCJleHAiOjE2ODUyNTc1MTJ9.oX54FWRFfe9JL9ZBqqDKblXNd256Jys-W6lbk6_mOUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cedula\":\"100\",\r\n    \"contraseña\":\"123\",\r\n    \"nombre\":\"Moderador\",\r\n    \"email\":\"xbbberz2@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/moderadores/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"moderadores",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prohibir producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJNT0RFUkFET1IiXSwic3ViIjoieGJiYmVyejJAZ21haWwuY29tIiwiaWF0IjoxNjg1MjU1NzEyLCJleHAiOjE2ODUyNTc1MTJ9.oX54FWRFfe9JL9ZBqqDKblXNd256Jys-W6lbk6_mOUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/moderadores/prohibir/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"moderadores",
+								"prohibir",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autorizar producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJNT0RFUkFET1IiXSwic3ViIjoieGJiYmVyejJAZ21haWwuY29tIiwiaWF0IjoxNjg1MjU1NzEyLCJleHAiOjE2ODUyNTc1MTJ9.oX54FWRFfe9JL9ZBqqDKblXNd256Jys-W6lbk6_mOUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/moderadores/autorizar/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"moderadores",
+								"autorizar",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar productos por estado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJNT0RFUkFET1IiXSwic3ViIjoieGJiYmVyejJAZ21haWwuY29tIiwiaWF0IjoxNjg1MjU1NzEyLCJleHAiOjE2ODUyNTc1MTJ9.oX54FWRFfe9JL9ZBqqDKblXNd256Jys-W6lbk6_mOUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/moderadores/productos_estado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"moderadores",
+								"productos_estado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener moderador por cedula",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJNT0RFUkFET1IiXSwic3ViIjoieGJiYmVyejJAZ21haWwuY29tIiwiaWF0IjoxNjg1MjU1NzEyLCJleHAiOjE2ODUyNTc1MTJ9.oX54FWRFfe9JL9ZBqqDKblXNd256Jys-W6lbk6_mOUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/moderadores/obtener/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"moderadores",
+								"obtener",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar moderadores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJNT0RFUkFET1IiXSwic3ViIjoieGJiYmVyejJAZ21haWwuY29tIiwiaWF0IjoxNjg1MjU1NzEyLCJleHAiOjE2ODUyNTc1MTJ9.oX54FWRFfe9JL9ZBqqDKblXNd256Jys-W6lbk6_mOUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/moderadores/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"moderadores",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/productos",
+			"item": [
+				{
+					"name": "Publicar producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MTM5NywiZXhwIjoxNjg1MjUzMTk3fQ.ExIOmdjcPCSWHAVA4b1acyBdGtTWLADc-2h8-mZ0CsE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuarioCedula\":\"1\",\r\n    \"isActivo\":true,\r\n    \"imagen\":\"Imagen 1\",\r\n    \"nombre\":\"Xbox\",\r\n    \"descripcion\":\"Consola Xbox Series X\",\r\n    \"precio\":2000.0,\r\n    \"isDisponible\":true,\r\n    \"categorias\":[\"BEBES\",\"TECNOLOGIA\"],\r\n    \"unidades\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/publicar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"publicar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comentar producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MTM5NywiZXhwIjoxNjg1MjUzMTk3fQ.ExIOmdjcPCSWHAVA4b1acyBdGtTWLADc-2h8-mZ0CsE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"texto\":\"Buen producto\",\r\n    \"calificacion\":4,\r\n    \"usuarioCedula\":\"1\",\r\n    \"productoCodigo\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/comentar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"comentar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Producto a favoritos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MTM5NywiZXhwIjoxNjg1MjUzMTk3fQ.ExIOmdjcPCSWHAVA4b1acyBdGtTWLADc-2h8-mZ0CsE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuarioCedula\":\"1\",\r\n    \"productoCodigo\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/agregar_favorito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"agregar_favorito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Producto de favoritos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MTM5NywiZXhwIjoxNjg1MjUzMTk3fQ.ExIOmdjcPCSWHAVA4b1acyBdGtTWLADc-2h8-mZ0CsE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"usuarioCedula\":\"1\",\r\n    \"productoCodigo\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/eliminar_favorito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"eliminar_favorito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por rango de precio",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MTM5NywiZXhwIjoxNjg1MjUzMTk3fQ.ExIOmdjcPCSWHAVA4b1acyBdGtTWLADc-2h8-mZ0CsE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"precioMinimo\":1000,\r\n    \"precioMaximo\":3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/listar_precio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"listar_precio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar productos creados por usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MTU5NywiZXhwIjoxNjg1MjUzMzk3fQ.wF9ToBusOpo4eEapqNRGG0jX4D2yf-ZDSLRMQ_I6sMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/listar_productos_vendedor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"listar_productos_vendedor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar productos favoritos de usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MTU5NywiZXhwIjoxNjg1MjUzMzk3fQ.wF9ToBusOpo4eEapqNRGG0jX4D2yf-ZDSLRMQ_I6sMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/listar_productos_favortitos_usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"listar_productos_favortitos_usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MTU5NywiZXhwIjoxNjg1MjUzMzk3fQ.wF9ToBusOpo4eEapqNRGG0jX4D2yf-ZDSLRMQ_I6sMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/listar_productos_favortitos_usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"listar_productos_favortitos_usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1MzcxMiwiZXhwIjoxNjg1MjU1NTEyfQ.5VX8iPeH6MNh1UyEPRQO_7Xi4GeeA6tSxefWAOG6r5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/eliminar/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"eliminar",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por codigo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1NTEyMiwiZXhwIjoxNjg1MjU2OTIyfQ.nqVlGITxHZvxmW3iHlQlyNwjRGIlHYTiZ4wFNPtDJHo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/obtener/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"obtener",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todos los productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI1NTEyMiwiZXhwIjoxNjg1MjU2OTIyfQ.nqVlGITxHZvxmW3iHlQlyNwjRGIlHYTiZ4wFNPtDJHo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/listar_todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"listar_todos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/transacciones",
+			"item": [
+				{
+					"name": "Realizar transaccion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI0ODkwOSwiZXhwIjoxNjg1MjUwNzA5fQ.Nfg716K2uYCSckDe0r1uaOsaYMpYlNr1T4-miUpg5nA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuarioCompradorCedula\":\"1004870909\",\r\n    \"usuarioVendedorCedula\": \"98006679\",\r\n    \"productoCodigo\":1,\r\n    \"metodoDePago\":\"EFECTIVO\",\r\n    \"unidadesCompradas\": 3\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/transacciones/realizar_transaccion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transacciones",
+								"realizar_transaccion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/usuarios",
+			"item": [
+				{
+					"name": "Actualizar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI0NTk5NCwiZXhwIjoxNjg1MjQ3Nzk0fQ.3ET-NZVEsQEFUgOwFHHLQNP5_vPUY248AyMkpqfVLkc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cedula\":\"1004870909\",\r\n    \"contraseña\":\"123\",\r\n    \"nombre\":\"Juan David Ortega Casas\",\r\n    \"email\":\"juano_ortega@hotmail.com\",\r\n    \"isCuentaActiva\": true,\r\n    \"telefono\":\"3136142910\",\r\n    \"direccion\":\"Calle 6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Im5hbGx5YmVyb2NAZ21haWwuY29tIiwiaWF0IjoxNjg1MjUxMDY1LCJleHAiOjE2ODUyNTI4NjV9.UJM8YpwnPfP3H53AJasYzAdIMOrLtMxeVIGWxkr67xQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/eliminar/98006679",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"eliminar",
+								"98006679"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI0OTYxOSwiZXhwIjoxNjg1MjUxNDE5fQ.Me6V7l6UVNYIYPDrYmaOTTda6WeVXGaHV_wAGfl2sLk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener usuario por cedula",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJDTElFTlRFIl0sInN1YiI6Imp1YW5vX29ydGVnYUBob3RtYWlsLmNvbSIsImlhdCI6MTY4NTI0OTcyNSwiZXhwIjoxNjg1MjUxNTI1fQ.d1UctOwAMVGw8AmflfN2HqmshDY8oUl5oRnr9FYMq9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/obtener/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"obtener",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

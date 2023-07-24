@@ -1,0 +1,14 @@
+.horizontal-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .horizontal-list li {
+    margin-right: 10px;
+  }
+  
+  .horizontal-list li:last-child {
+    margin-right: 0;
+  }
+  

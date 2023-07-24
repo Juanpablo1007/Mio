@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="principal" stylesheets="@../estilos/estilos.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectofinal.controller.MinutoAMinutoController">
+   <top>
+      <GridPane prefHeight="100.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btRegresar" mnemonicParsing="false" onAction="#regresar" styleClass="boton" text="Regresar" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="Minuto a minuto" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <styleClass>
+                  <String fx:value="texto" />
+                  <String fx:value="titulo" />
+               </styleClass>
+            </Label>
+         </children>
+      </GridPane>
+   </top>
+   <left>
+      <VBox fx:id="paneResumen" alignment="CENTER" prefHeight="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Resumen">
+               <styleClass>
+                  <String fx:value="texto" />
+                  <String fx:value="subtitulo" />
+               </styleClass>
+            </Label>
+            <TextArea fx:id="txtResumen" editable="false" prefHeight="200.0" prefWidth="200.0">
+               <styleClass>
+                  <String fx:value="campo-texto" />
+                  <String fx:value="campo-texto-resumen" />
+               </styleClass>
+            </TextArea>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" spacing="50.0" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="labelEquipos" text="...">
+                     <styleClass>
+                        <String fx:value="texto" />
+                        <String fx:value="subtitulo" />
+                     </styleClass>
+                  </Label>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <VBox fx:id="paneBotones" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="6223784577">
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/ajax.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="equipos" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="7683439947" toggleGroup="$equipos">
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Atletico.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="5483476273" toggleGroup="$equipos">
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Bayern.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="4362644475" toggleGroup="$equipos">
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Benfica.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="9867586768" toggleGroup="$equipos">
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Chelsea.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="8539728434" toggleGroup="$equipos">
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Inter.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="7672782258" toggleGroup="$equipos">
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Juve.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="3592897539" toggleGroup="$equipos">
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Lille%20LOSC.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </ToggleButton>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="9927234694" toggleGroup="$equipos">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Liverpool.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="5277683975" toggleGroup="$equipos">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/City.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="9684675852" toggleGroup="$equipos">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/United.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="5283784577" toggleGroup="$equipos">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Psg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="8425782855" toggleGroup="$equipos">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Real%20Madrid.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="8424299454" toggleGroup="$equipos">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Red%20Bull%20Salzburg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="2469545494" toggleGroup="$equipos">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Sporting.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="6738364662" toggleGroup="$equipos">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../design/escudos/Villareal.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="boton" />
+                                          <String fx:value="boton-equipo" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+            </VBox>
+            <VBox fx:id="paneInfo" alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <children>
+                  <VBox fx:id="paneNoti" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <styleClass>
+                        <String fx:value="campo-texto-notificar" />
+                        <String fx:value="campo-texto" />
+                     </styleClass>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+</BorderPane>

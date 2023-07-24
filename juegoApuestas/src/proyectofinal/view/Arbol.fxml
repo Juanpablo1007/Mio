@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="principal" stylesheets="@../estilos/estilos.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectofinal.controller.ArbolController">
+   <top>
+      <GridPane prefHeight="100.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" styleClass="boton" text="Regresar" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="Resumen del torneo" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <styleClass>
+                  <String fx:value="texto" />
+                  <String fx:value="titulo" />
+               </styleClass>
+            </Label>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="557.0" fitWidth="1030.0" layoutX="184.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../design/Arbol.jpeg" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelOctavos1" contentDisplay="GRAPHIC_ONLY" layoutX="209.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Label>
+            <Label fx:id="labelOctavos2" contentDisplay="GRAPHIC_ONLY" layoutX="265.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Label>
+            <Label fx:id="labelOctavos3" contentDisplay="GRAPHIC_ONLY" layoutX="317.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos4" contentDisplay="GRAPHIC_ONLY" layoutX="375.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos5" contentDisplay="GRAPHIC_ONLY" layoutX="431.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos5" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos6" contentDisplay="GRAPHIC_ONLY" layoutX="486.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos6" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos7" contentDisplay="GRAPHIC_ONLY" layoutX="542.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos7" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos8" contentDisplay="GRAPHIC_ONLY" layoutX="600.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos8" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos9" contentDisplay="GRAPHIC_ONLY" layoutX="657.0" layoutY="480.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos9" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos10" contentDisplay="GRAPHIC_ONLY" layoutX="717.0" layoutY="480.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos10" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos11" contentDisplay="GRAPHIC_ONLY" layoutX="776.0" layoutY="480.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos11" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos12" contentDisplay="GRAPHIC_ONLY" layoutX="837.0" layoutY="480.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos12" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos13" contentDisplay="GRAPHIC_ONLY" layoutX="896.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos13" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos14" contentDisplay="GRAPHIC_ONLY" layoutX="956.0" layoutY="480.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos14" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos15" contentDisplay="GRAPHIC_ONLY" layoutX="1018.0" layoutY="481.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos15" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelOctavos16" contentDisplay="GRAPHIC_ONLY" layoutX="1085.0" layoutY="480.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgOctavos16" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelCuartos1" contentDisplay="GRAPHIC_ONLY" layoutX="235.0" layoutY="414.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgCuartos1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelCuartos2" contentDisplay="GRAPHIC_ONLY" layoutX="343.0" layoutY="414.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgCuartos2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelCuartos3" contentDisplay="GRAPHIC_ONLY" layoutX="459.0" layoutY="414.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgCuartos3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelCuartos4" contentDisplay="GRAPHIC_ONLY" layoutX="569.0" layoutY="414.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgCuartos4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelCuartos5" contentDisplay="GRAPHIC_ONLY" layoutX="685.0" layoutY="414.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgCuartos5" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelCuartos6" contentDisplay="GRAPHIC_ONLY" layoutX="800.0" layoutY="414.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgCuartos6" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelCuartos7" contentDisplay="GRAPHIC_ONLY" layoutX="921.0" layoutY="414.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgCuartos7" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelCuartos8" contentDisplay="GRAPHIC_ONLY" layoutX="1047.0" layoutY="414.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgCuartos8" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelSemis1" contentDisplay="GRAPHIC_ONLY" layoutX="290.0" layoutY="329.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgSemis1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelSemis2" contentDisplay="GRAPHIC_ONLY" layoutX="514.0" layoutY="329.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgSemis2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelSemis3" contentDisplay="GRAPHIC_ONLY" layoutX="743.0" layoutY="329.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgSemis3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelSemis4" contentDisplay="GRAPHIC_ONLY" layoutX="982.0" layoutY="329.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgSemis4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelFinal1" contentDisplay="GRAPHIC_ONLY" layoutX="397.0" layoutY="243.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgFinal1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelFinal2" contentDisplay="GRAPHIC_ONLY" layoutX="869.0" layoutY="243.0" onMouseClicked="#abrirResumen" text="...">
+               <graphic>
+                  <ImageView fx:id="imgFinal2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="labelGanador" contentDisplay="GRAPHIC_ONLY" layoutX="627.0" layoutY="163.0" text="...">
+               <graphic>
+                  <ImageView fx:id="imgGanador" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

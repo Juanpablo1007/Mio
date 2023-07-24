@@ -1,0 +1,108 @@
+*{
+    -fx-font-family: "Georgia";
+}
+
+.principal {
+    -fx-background-image: url("/proyectofinal/design/Fondo.jpeg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.equipo{
+    -fx-background-color: #03045e;
+    -fx-pref-width: 80;
+    -fx-pref-height: 27;
+}
+
+.texto{
+    -fx-font-style: italic;
+    -fx-effect: dropshadow(three-pass-box, #000000, 10, .5, 0, 0);
+}
+
+.texto-error{
+    -fx-text-fill: #d00000;
+    -fx-font-size: 20;
+    -fx-effect: dropshadow(three-pass-box, #ffffff, 10, .5, 0, 0);
+}
+
+.titulo{
+    -fx-text-fill: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #b5179e 0.0%, #5156e4 100.0%);
+    -fx-font-size: 40;
+    -fx-text-alignment: center;
+}
+
+.subtitulo{
+    -fx-text-fill: #ffffff;
+    -fx-fill: #ffffff;
+    -fx-font-size: 25;
+}
+
+.boton{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #03045e;
+    -fx-border-color: #b5179e;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+}
+
+.boton:hover{
+    -fx-background-color: #0077b6;
+    -fx-border-width: 2;
+}
+
+.boton:pressed{
+    -fx-background-color: #48cae4;
+    -fx-text-fill: #000000;
+}
+
+.boton:selected{
+    -fx-background-color: #80ed99;
+}
+
+.boton-general{
+    -fx-pref-width: 150;
+    -fx-pref-height: 30;
+}
+
+.boton-apuesta{
+    -fx-pref-width: 200;
+    -fx-pref-height: 40;
+    -fx-font-size: 20;
+    -fx-border-width: 3;
+    -fx-border-style: dashed;
+    
+}
+
+.boton-equipo{
+    -fx-pref-width: 80;
+    -fx-pref-height: 80;
+    -fx-padding: 7;
+}
+
+.campo-texto{
+    -fx-background-color: #dee2ff;
+    -fx-border-color: #777777;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+    -fx-effect: dropshadow(three-pass-box, #ffffff, 35, 0.5, 0, 0);
+    -fx-pref-height: 35;
+    -fx-font-size: 15;
+}
+
+.campo-texto-resumen{
+    -fx-pref-width: 400;
+    -fx-pref-height: 500;
+}
+
+.campo-texto-notificar{
+    -fx-background-color: #550099;
+    -fx-pref-width: 400;
+    -fx-pref-height: 100;
+    -fx-alignment: center;
+    -fx-fill: #ffffff;
+    -fx-font-size: 25;
+    -fx-padding: 20;
+}
